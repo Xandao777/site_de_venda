@@ -1,0 +1,499 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@700;800;900&family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+* {
+    font-family: 'Quicksand', cursive;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #333;
+    width: 3px;
+    border-radius: 20px;
+
+}
+
+#menuMagico {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 13px;
+    padding-inline-start: 5px;
+}
+
+#menuMagico li {
+    position: relative;
+    list-style: none;
+}
+
+#menuMagico li a {
+    position: relative;
+    text-decoration: none;
+    line-height: 1.4em;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+}
+
+#menuMagico li a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--clr);
+    width: 0;
+    overflow: hidden;
+    transition: 0.4s;
+    border-right: 1px solid var(--clr);
+}
+
+#menuMagico li a:hover::before {
+    width: 100%;
+    filter: drop-shadow(0 0 10px #00c3ff);
+}
+
+#menu {
+    background-color: rgb(17, 17, 17);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+    position: sticky;
+
+    top: 0;
+    left: 0;
+
+    max-width: 100vw;
+    z-index: 999;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100vw;
+    height: 80vh;
+    object-fit: cover;
+}
+
+.logo {
+    white-space: nowrap;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 8vw;
+    font-weight: bolder;
+    font-family: 'Kanit', cursive;
+    color: #fff;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.539);
+    border: 5px solid white;
+    padding: 10px 40px;
+}
+
+@media (max-width: 400px) {
+    .logo {
+        top: 30%;
+    }
+
+    * {
+        font-size: 1.003em;
+    }
+}
+
+@media (min-width: 600px) {
+    .logo {
+        top: 35%;
+    }
+}
+
+
+
+#about {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    justify-content: center;
+    align-content: center;
+
+    background-color: rgb(17, 17, 17);
+    padding: 50px;
+}
+
+#titleAbout {
+    color: white;
+
+    font-weight: bolder;
+    font-size: 3em;
+
+    text-align: center;
+
+    background-color: rgb(17, 17, 17);
+    padding: 20px;
+    margin: 0;
+}
+
+.containerAbout {
+    display: flex;
+    flex-direction: column;
+
+
+    background-color: #ffffff;
+    border-radius: 7px;
+
+    color: black;
+    margin: 20px;
+
+    width: 350px;
+    height: 250px;
+
+    transition-duration: 0.5s;
+    transform: scale(1);
+}
+
+@media (max-width: 550px) {
+    .containerAbout {
+        min-width: 300px;
+    }
+}
+
+.containerAbout:hover {
+    background-color: rgb(17, 17, 17);
+    color: rgb(255, 255, 255);
+
+    transform: scale(1.08);
+
+    box-shadow: 0 0 30px #00c3ff;
+
+    z-index: 99;
+}
+
+#about h2 {
+    text-align: center;
+}
+
+.aboutUs {
+    padding: 10px;
+
+    text-align: center;
+
+    font-size: 1.2em;
+    font-weight: 600;
+    line-height: 1.5em;
+}
+
+
+#services {
+    background-color: rgb(255, 255, 255);
+
+    height: max-content;
+    padding: 40px;
+}
+
+#services h2 {
+    text-align: center;
+}
+
+.service {
+    text-align: center;
+    background-color: rgb(17, 17, 17);
+
+    border-radius: 8px;
+
+    padding: 30px;
+    margin: 20px auto;
+
+    max-height: max-content;
+    max-width: 100vw;
+
+    margin-bottom: 60px;
+}
+
+#services h1 {
+    font-size: 24px;
+    margin: 10px;
+    text-align: center;
+}
+
+.service p {
+    font-size: 2em;
+    line-height: 1.5;
+    margin-bottom: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.service .button {
+    display: inline-block;
+    margin: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bolder;
+    color: rgb(0, 0, 0);
+    background-color: #3dff44;
+
+    transition-duration: 0.5s;
+    transform: scale(1);
+
+
+}
+
+.button:hover {
+    transform: scale(1.08);
+    color: rgb(255, 255, 255);
+    background-color: rgb(17, 17, 17);
+    box-shadow: 0 0 10px #00c3ff;
+}
+
+#plans {
+    margin: 60px auto;
+}
+
+#plans h1 {
+    text-align: center;
+    font-size: 3em;
+}
+
+#plansModels {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.plano {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-items: center;
+
+    border-left: 2px solid #000000;
+    padding-left: 10px;
+    width: 300px;
+    margin: 10px auto;
+}
+
+.plano p, h2 {
+    font-weight: bolder;
+    font-family: 'Kanit';
+}
+
+.plano h2 {
+    font-size: 1.5em;
+}
+
+.valorPlan {
+    font-weight: bold;
+    font-size: 2em;
+}
+
+#economiaDez {
+    background: linear-gradient(to right, #fffdb6 50%, rgb(255, 255, 255) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.5s;
+}
+
+#economiaDez:hover {
+    background-position: left bottom;
+}
+
+#economiaTrinta {
+    background: linear-gradient(to right, rgb(255, 230, 104) 50%, rgb(255, 255, 255) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.5s;
+}
+
+#economiaTrinta:hover {
+    background-position: left bottom;
+}
+
+#economiaSetenta {
+    background: linear-gradient(to right, rgb(250, 214, 31) 50%, rgb(255, 255, 255) 50%);
+    background-size: 200% 100%;
+    background-position: right;
+    transition: background-position 0.5s;
+}
+
+#economiaSetenta:hover {
+    background-position: left bottom;
+}
+
+#contacts {
+    position: fixed;
+    top: 65vh;
+    left: 3px;
+    z-index: 9999;
+}
+
+#contact {
+    display: flex;
+    gap: 25px;
+}
+
+.what {
+    margin-bottom: 3px;
+}
+
+.icone {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: 0.5s;
+}
+
+.icone:hover {
+    width: 180px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0);
+}
+
+.icone::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50px;
+    background-image: linear-gradient(to right, var(--i), var(--j));
+    opacity: 0;
+    transition: 0.5s;
+}
+
+.icone:hover::before {
+    opacity: 1;
+}
+
+.icone::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    width: 100%;
+    height: 100%;
+    border-radius: 60px;
+    background-image: linear-gradient(45deg, var(--i), var(--j));
+    opacity: 0;
+    transition: 0.5s;
+    z-index: -1;
+    filter: blur(15px);
+}
+
+.icone:hover::after {
+    opacity: 0.5;
+}
+
+.icone img {
+    width: 60px;
+    height: 60px;
+    opacity: 1;
+
+    transition: 0.7s;
+    transition-delay: 0.2s;
+}
+
+.icone:hover img {
+    opacity: 0;
+    transform: scale(0);
+    font-size: 1.75em;
+    transition-delay: 0.2s;
+}
+
+.icone span {
+    position: absolute;
+}
+
+.icone #titulo {
+    color: #fff;
+    font-size: 1.1em !important;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transform: scale(0);
+    transition: 0.5s;
+    transition-delay: 0s;
+}
+
+.icone:hover #titulo {
+    transform: scale(1);
+    transition-delay: 0.2s;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 5px;
+}
+
+#containerDivulg {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+footer a {
+    position: absolute;
+    white-space: nowrap;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+footer a::before {
+    content: attr(data-text);
+    position: absolute;
+    color: var(--clr);
+    width: 0%;
+    overflow: hidden;
+    white-space: nowrap;
+    transition: 0.4s;
+    border-right: 1px solid var(--clr);
+}
+
+footer a:hover::before {
+    width: 100%;
+}
